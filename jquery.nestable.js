@@ -447,7 +447,10 @@
                     this.unsetParent(parent.parent());
                 }
                 if (!this.dragRootEl.find(opt.itemNodeName).length) {
-                    this.dragRootEl.append('<div class="' + opt.emptyClass + '"/>');
+                    if (this.dragRootEl.find("."+opt.emptyClass).length == 0)
+					{
+                        this.dragRootEl.append('<div class="' + opt.emptyClass + '"/>');
+					}
                 }
                 // parent root list has changed
                 if (isNewRoot) {
